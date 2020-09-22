@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid19 Tracker</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="logo">
+          <img src="assets/imgs/covid.jpg" alt="" height="100" width="100">
+          <img src="assets/imgs/logo.jpg" alt="" height="100" width="100">
+        </div>
+        <h1 id="caption">covid-19 case update</h1>
+        <div id="dailyRecordCon">
+          <h2 id="dailyRecord">
+            <span id="totalNumberOfDailyCases">23</span> new cases confirmed
+          </h2>
+          <div id="date"></div>
+          <div id="confirmedCaseCon">
+            <div id="confirmedCaseRow">
+              <div id="totalConfirmedCaption">
+                total confirmed 
+              </div>
+              <div id="totalConfirmedRecord">
+                79874
+              </div>
+            </div>
+            <div id="dischargeCaseRow">
+              <div id="totalDischargeCaption">
+                discharged 
+              </div>
+              <div id="totalDischargeRecord">
+                74687
+              </div>
+            </div>
+            <div id="deathCaseRow">
+              <div id="totalDeathCaption">
+                deaths
+              </div>
+              <div id="totalDeathRecord">
+                1230
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section>
+        <div class="tableCon">
+          <input type="search" name="search" id="serachInput" placeholder="Search for a state" autocomplete="off">
+          <table>
+            <thead>
+              <tr>
+                <th>S/N</th>
+                <th>State</th>
+                <th>Confirmed cases</th>
+                <th>Discharged</th>
+                <th>Deaths</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Abia</td>
+                <td>100</td>
+                <td>90</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Abia</td>
+                <td>100</td>
+                <td>90</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Abia</td>
+                <td>100</td>
+                <td>90</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Abia</td>
+                <td>100</td>
+                <td>90</td>
+                <td>2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <footer>
+        <div>Copyright &copy; <span id="tradeMarkDate"></span>&nbsp; All rights reserved | This Nigeria covid-19 tracker is made with &hearts; by Godstime</div>
+      </footer>
+    </main>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
