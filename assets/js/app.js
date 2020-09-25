@@ -12,8 +12,19 @@ fetch("https://covidnigeria.herokuapp.com/api", requestOptions)
     const data = record.data.states
     for (let key in data) {
       let obj = data[key];
-      console.log(obj.state,obj.confirmedCases,obj.discharged,obj.death)
-    }
+      console.log(key,obj.state,obj.confirmedCases,obj.discharged,obj.death);
+      (() => {
+        // creating a new tr 
+        const tbody = document.querySelector('#tble')
+        const tr = document.createElement('tr')
+        tbody.appendChild(tr);
+        tr.appendChild(document.createElement('td')).textContent = key
+        tr.appendChild(document.createElement('td')).textContent = obj.state
+        tr.appendChild(document.createElement('td')).textContent = obj.confirmedCases
+        tr.appendChild(document.createElement('td')).textContent = obj.discharged
+        tr.appendChild(document.createElement('td')).textContent = obj.death
+    })()
+  }
     const totalConfirmedRecord = document.querySelector('#totalConfirmedRecord')
     const totalDischargeRecord = document.querySelector('#totalDischargeRecord')
     const totalDeathRecord = document.querySelector('#totalDeathRecord')
