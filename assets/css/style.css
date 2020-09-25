@@ -7,8 +7,11 @@
   background: #091008;
 }
 div.logo{
+  padding: 20px 0px 20px 0px;
   text-align: center;
-  padding: 50px 0px 20px 0px;
+}
+img{
+  width: 30%;
 }
 h1#caption{
   color: #fff;
@@ -84,6 +87,7 @@ div#totalConfirmedRecord{
   text-align: center;
   border-radius: 10px;
   font-weight: bolder;
+  visibility: hidden;
 }
 div#totalDischargeRecord{
   background: #078651;
@@ -94,6 +98,7 @@ div#totalDischargeRecord{
   font-weight: bolder;
   color: #fff;
   margin-top: 30px;
+  visibility: hidden;
 }
 div#totalDeathRecord{
   background: #C60001;
@@ -104,6 +109,7 @@ div#totalDeathRecord{
   font-weight: bolder;
   color: #fff;
   margin-top: 30px;
+  visibility: hidden;
 }
 section div.tableCon{
   margin: 20px auto;
@@ -145,9 +151,21 @@ footer{
 footer > div{
   text-align: center;
   color: #fff;
+  font-family: monospace;
+}
+a#socialHandle{
+  text-decoration: none;
+  color: #fff;
 }
 
 @media screen and (max-width:299px) and (min-width: 200px){
+  img{
+    width: 80%;
+  }
+  div.logo{
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+  }
   div#dailyRecordCon{
     height: auto;
     width: 100%;
@@ -192,6 +210,9 @@ footer > div{
 }
 
 @media screen and (max-width:500px) and (min-width: 300px){
+  img{
+    width: 80%;
+  }
   div#dailyRecordCon{
     height: auto;
     width: 100%;
@@ -231,6 +252,9 @@ footer > div{
   }
 }
 @media screen and (max-width:800px) and (min-width: 501px){
+  img{
+    width: 80%;
+  }
   div#dailyRecordCon{
     height: auto;
     width: 100%;
