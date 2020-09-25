@@ -11,9 +11,12 @@ fetch("https://covidnigeria.herokuapp.com/api", requestOptions)
     const record = await response.json()
     const data = record.data.states
     for (let key in data) {
+      const table = document.querySelector('#tble')
+      const tr = document.createElement('tr')
+      const td = document.createElement('td')
       let obj = data[key];
+      document.querySelector('#tble').textContent = obj.state
       console.log(obj.state,obj.confirmedCases,obj.discharged,obj.death)
-      
     }
     const totalConfirmedRecord = document.querySelector('#totalConfirmedRecord')
     const totalDischargeRecord = document.querySelector('#totalDischargeRecord')
