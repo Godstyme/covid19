@@ -117,6 +117,7 @@ section div.tableCon{
   width: 80%;
   background: #fff;
   padding-top: 10px;
+  visibility: hidden;
 }
 #serachInput{
   height: 40px;
@@ -139,11 +140,17 @@ table,th,td{
 th:nth-child(1),td:nth-child(1){
   width: 2%;
 }
-th,td{
-  padding: 0.4em 0.6em;
+th{
+  padding: 0.4em 0.2em;
+  text-align: left;
   font-size: 1.6em;
   width: 5%;
   font-weight: bolder;
+}
+td{
+  padding: 0.4em 0.3em;
+  font-size: 1.6em;
+  width: 5%;
 }
 footer{
   padding: 20px 0px;
