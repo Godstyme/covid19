@@ -14,9 +14,9 @@ fetch(userRquest, requestOptions)
     const data = record.data.states
     for (let key in data) {
       let obj = data[key];
-      console.log(+key+1,obj.state,obj.confirmedCases,obj.discharged,obj.death)
+      // console.log(+key+1,obj.state,obj.confirmedCases,obj.discharged,obj.death)
       ;(() => {
-        // creating a new tr 
+        // creating a new tr
         document.querySelector('.tableCon').style.visibility = 'visible'
         const tbody = document.querySelector('#tble')
         const tr = document.createElement('tr')
@@ -43,7 +43,7 @@ fetch(userRquest, requestOptions)
     totalActiveRecord.style.visibility = 'visible'
     totalDeathRecord.innerHTML = record.data.death
     totalDeathRecord.style.visibility = 'visible'
-    console.log(record.data.totalConfirmedCases)
+    // console.log(record.data.totalConfirmedCases)
   })
   .catch(error =>{
     console.log(error)
@@ -61,3 +61,27 @@ const dateBuilder = (d) => {
 const now = new Date()
 const date = document.querySelector('#date').innerHTML = dateBuilder(now)
 document.querySelector('#tradeMarkDate').innerHTML = now.getFullYear()
+
+let search = () => {
+  let input, filter, table, tr, td, cell, i;
+  input = document.querySelector("#serachInput");
+  filter = input.value.toUpperCase();
+  table = document.querySelector("table");
+  tr = table.querySelectorAll("tr");
+  for (i = 1; i < tr.length; i++) {
+    // Hide the row initially.
+    tr[i].style.display = "none";
+    td = tr[i].querySelectorAll("td");
+    for (let j = 0; j < td.length; j++) {
+      cell = tr[i].querySelectorAll("td")[j];
+      if (cell) {
+        if (cell.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+          break;
+        }
+      }
+    }
+  }
+}
+document.addEventListener('keyup',search);
+

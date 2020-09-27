@@ -117,10 +117,13 @@ section div.tableCon{
   visibility: hidden;
 }
 #serachInput{
+  background-image: url(../imgs/search.png);
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 40px;
   width: 30%;
   font-size: 1.6em;
-  padding: 2px 0px 2px 5px;
+  padding: 2px 0px 2px 33px;
   margin: 0px 0px 10px 10px;
   border-radius: 10px;
   outline: none;
@@ -206,7 +209,7 @@ a#socialHandle{
   #serachInput{
     width: 90%;
     font-size: 1em;
-    padding: 2px 10px;
+    padding: 2px 0px 0px 38px;
   }
 }
 
@@ -280,10 +283,10 @@ a#socialHandle{
     font-size: 1.5em;
   }
   #serachInput{
-    width: 80%;
+    width: 85%;
     height: 60px;
     font-size: 2em;
-    padding: 2px 10px;
+    padding: 2px 0px 0px 45px;
   }
 }
 @media screen and (max-width:1300px) and (min-width: 801px){
@@ -302,9 +305,9 @@ a#socialHandle{
     font-size: 1.5em;
   }
   #serachInput{
-    width: 40%;
+    width: 45%;
     height: 60px;
     font-size: 2em;
-    padding: 2px 10px;
+    padding: 2px 0px 0px 45px;
   }
 }
