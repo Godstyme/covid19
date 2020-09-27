@@ -1,19 +1,21 @@
-let myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+let reqHeaders = new Headers({
+  'Content-Type': 'application/json'
+});
 
 let requestOptions = {
   method: 'GET',
-  headers: myHeaders,
+  headers: reqHeaders,
   redirect: 'follow'
 };
-fetch("https://covidnigeria.herokuapp.com/api", requestOptions)
+const userRquest = new Request('https://covidnigeria.herokuapp.com/api')
+fetch(userRquest, requestOptions)
   .then(async response => {
     const record = await response.json()
     const data = record.data.states
     for (let key in data) {
       let obj = data[key];
-      console.log(+key+1,obj.state,obj.confirmedCases,obj.discharged,obj.death);
-      (() => {
+      console.log(+key+1,obj.state,obj.confirmedCases,obj.discharged,obj.death)
+      ;(() => {
         // creating a new tr 
         document.querySelector('.tableCon').style.visibility = 'visible'
         const tbody = document.querySelector('#tble')
@@ -26,13 +28,19 @@ fetch("https://covidnigeria.herokuapp.com/api", requestOptions)
         tr.appendChild(document.createElement('td')).textContent = obj.death
     })()
   }
+    const sampleTestRecord = document.querySelector('#sampleTestRecord')
     const totalConfirmedRecord = document.querySelector('#totalConfirmedRecord')
     const totalDischargeRecord = document.querySelector('#totalDischargeRecord')
+    const totalActiveRecord = document.querySelector('#totalActiveRecord')
     const totalDeathRecord = document.querySelector('#totalDeathRecord')
+    sampleTestRecord.innerHTML = record.data.totalSamplesTested
     totalConfirmedRecord.innerHTML = record.data.totalConfirmedCases
     totalConfirmedRecord.style.visibility = 'visible'
+    sampleTestRecord.style.visibility = 'visible'
     totalDischargeRecord.innerHTML = record.data.discharged
     totalDischargeRecord.style.visibility = 'visible'
+    totalActiveRecord.innerHTML = record.data.totalActiveCases
+    totalActiveRecord.style.visibility = 'visible'
     totalDeathRecord.innerHTML = record.data.death
     totalDeathRecord.style.visibility = 'visible'
     console.log(record.data.totalConfirmedCases)
