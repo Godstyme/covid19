@@ -20,4 +20,4 @@ Preview it Live 👉👉 [Click Here](https://nigeriacovid19tracker.netlify.app/
 <img src = "https://www.linkpicture.com/q/IMG_20201001_161302.png" height="400" width="300">
 
 
-
+### "Don't forget to give this Repository a ⭐!"
