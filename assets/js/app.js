@@ -28,11 +28,11 @@ fetch(userRquest, requestOptions)
         tr.appendChild(document.createElement('td')).textContent = obj.death
     })()
   }
-    const sampleTestRecord = document.querySelector('#sampleTestRecord')
-    const totalConfirmedRecord = document.querySelector('#totalConfirmedRecord')
-    const totalDischargeRecord = document.querySelector('#totalDischargeRecord')
-    const totalActiveRecord = document.querySelector('#totalActiveRecord')
-    const totalDeathRecord = document.querySelector('#totalDeathRecord')
+    const sampleTestRecord = document.querySelector('.sampRecord')
+    const totalConfirmedRecord = document.querySelector('.confirmedRecord')
+    const totalDischargeRecord = document.querySelector('.dischargedRecord')
+    const totalActiveRecord = document.querySelector('.activeRecord')
+    const totalDeathRecord = document.querySelector('.deathsRecord')
     sampleTestRecord.innerHTML = record.data.totalSamplesTested
     totalConfirmedRecord.innerHTML = record.data.totalConfirmedCases
     totalConfirmedRecord.style.visibility = 'visible'
@@ -84,4 +84,16 @@ let search = () => {
   }
 }
 document.addEventListener('keyup',search);
+
+
+
+// https://openi.nlm.nih.gov/api/search?m=1&n=10
+// {
+//   "content-length": "60",
+//   "content-type": "application/json;charset=UTF-8",
+//   "date": "Fri, 02 Oct 2020 12:37:29 GMT",
+//   "server": "Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips mod_jk/1.2.43",
+//   "status": "200",
+//   "strict-transport-security": "max-age=31536000; includeSubDomains; preload"
+// }
 

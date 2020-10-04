@@ -39,74 +39,81 @@ div#date{
 div#confirmedCaseCon{
   padding: 20px 60px;
 }
-div#confirmedCaseRow,div#dischargeCaseRow,div#deathCaseRow,div#sampleTestRow,div#activeCaseRow{
+#firstGridCon,#secondGridCon{
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: repeat(2,1fr);
   column-gap: 30px;
-}
-div#totalConfirmedCaption,div#sampleTestCaption{
-  background: #FEC813;
-  font-size: 2em;
-  padding: 10px 0px;
-  border-radius: 10px;
-  font-weight: bolder;
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 30px;
-}
-div#totalDischargeCaption{
-  background: #078651;
-  font-size: 2em;
-  padding: 10px 0px;
-  text-align: center;
   color: #fff;
+}
+div#sampleTestCaption{
+  background: #9F9A73;
+  font-size: 1.4em;
+  padding: 10px 0px;
   border-radius: 10px;
   font-weight: bolder;
   text-transform: uppercase;
+  text-align: center;
   margin-top: 30px;
+  display: grid;
+  grid-template-columns: 70% 20%;
 }
-div#totalDeathCaption,div#totalActiveCaption{
+.sampCaption{
+  text-align: left;
+  padding: 20px 5px;
+}
+.sampRecord,.confirmedRecord,.activeRecord,.dischargedRecord{
+  padding: 20px 0px;
+  text-align: right;
+  font-weight: bolder;
+  visibility: hidden;
+}
+div#confirmedCaseCaption{
+  background: #0492C2;
+  font-size: 1.4em;
+  padding: 10px 0px;
+  border-radius: 10px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 70% 20%;
+}
+#activeCaption{
+  background: #FFC82D;
+  font-size: 1.4em;
+  padding: 10px 0px;
+  border-radius: 10px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 70% 20%;
+  color: #000 !important;
+}
+#dischargedCaption{
+  background: #138750;
+  font-size: 1.4em;
+  padding: 10px 0px;
+  border-radius: 10px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 70% 20%;
+}
+div#totalDeathCaption{
   background: #C60001;
-  font-size: 2em;
-  padding: 10px 0px;
+  font-size: 1.4em;
+  padding: 20px 0px;
   text-align: center;
   color: #fff;
   border-radius: 10px;
   font-weight: bolder;
   text-transform: uppercase;
   margin-top: 30px;
-}
-div#totalConfirmedRecord,div#sampleTestRecord{
-  background: #FEC813;
-  font-size: 2em;
-  padding: 10px 0px;
-  text-align: center;
-  border-radius: 10px;
-  font-weight: bolder;
-  margin-top: 30px;
-  visibility: hidden;
-}
-div#totalDischargeRecord{
-  background: #078651;
-  font-size: 2em;
-  padding: 10px 0px;
-  text-align: center;
-  border-radius: 10px;
-  font-weight: bolder;
-  color: #fff;
-  margin-top: 30px;
-  visibility: hidden;
-}
-div#totalDeathRecord,div#totalActiveRecord{
-  background: #C60001;
-  font-size: 2em;
-  padding: 10px 0px;
-  text-align: center;
-  border-radius: 10px;
-  font-weight: bolder;
-  color: #fff;
-  margin-top: 30px;
-  visibility: hidden;
 }
 section div.tableCon{
   margin: 20px auto;
@@ -181,17 +188,21 @@ a#socialHandle{
   div#confirmedCaseCon{
     padding: 20px 25px;
   }
-  div#confirmedCaseRow,div#dischargeCaseRow,div#deathCaseRow,div#sampleTestRow,div#activeCaseRow{
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-  }
-  div#totalConfirmedCaption,div#totalDischargeCaption,div#totalDeathCaption,div#sampleTestCaption,div#totalActiveCaption,
-  div#totalConfirmedRecord,div#totalDischargeRecord,div#totalDeathRecord,div#sampleTestRecord,div#totalActiveRecord{
-    font-size: 1.4em;
-    margin: 8px 0px;
-  }
   div#date{
     font-size: 1.7em;
+  }
+  #firstGridCon,#secondGridCon{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+  } 
+  #confirmedCaseCaption,
+  div#sampleTestCaption{
+    font-size: 0.8em !important;
+  }
+  #activeCaption,#dischargedCaption{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1em;
   }
   section div.tableCon{
     width: 100%;
@@ -223,16 +234,11 @@ a#socialHandle{
     border-radius: 0px;
   }
   div#confirmedCaseCon{
-    padding: 20px 40px;
+    padding: 20px 20px;
   }
-  div#confirmedCaseRow,div#dischargeCaseRow,div#deathCaseRow,div#sampleTestRow,div#activeCaseRow{
+  #firstGridCon,#secondGridCon{
     display: grid;
     grid-template-columns: repeat(1,1fr);
-  }
-  div#totalConfirmedCaption,div#totalDischargeCaption,div#totalDeathCaption,div#sampleTestCaption,div#totalActiveCaption,
-  div#totalConfirmedRecord,div#totalDischargeRecord,div#totalDeathRecord,div#sampleTestRecord,div#totalActiveRecord{
-    font-size: 1.4em;
-    margin: 8px 0px;
   }
   section div.tableCon{
     width: 100%;
@@ -263,10 +269,13 @@ a#socialHandle{
   div#confirmedCaseCon{
     padding: 20px 40px;
   }
-  div#confirmedCaseRow,div#dischargeCaseRow,div#deathCaseRow,div#sampleTestRow,div#activeCaseRow{
+  #firstGridCon,#secondGridCon{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    column-gap: 30px;
+    grid-template-columns: repeat(1,1fr);
+  }
+  div#sampleTestCaption,#confirmedCaseCaption,#activeCaption,#dischargedCaption{
+    display: flex;
+    justify-content: space-around;
   }
   section div.tableCon{
     width: 95%;
