@@ -7,17 +7,17 @@ let requestOptions = {
   headers: reqHeaders,
   redirect: 'follow'
 };
-let obj, state;
+let records, state;
 const userRquest = new Request('https://covidnigeria.herokuapp.com/api')
 fetch(userRquest, requestOptions)
   .then(async response => {
     const record = await response.json()
     const data = record.data.states
     for (let key in data) {
-      obj = data[key];
-      state = obj.state
+      records = data[key];
+      state = records.state
       console.log(state)
-      // console.log(+key+1,obj.state,obj.confirmedCases,obj.discharged,obj.death)
+      // console.log(+key+1,records.state,records.confirmedCases,records.discharged,records.death)
       ;(() => {
         // creating a new tr
         document.querySelector('.tableCon').style.visibility = 'visible'
@@ -25,10 +25,10 @@ fetch(userRquest, requestOptions)
         const tr = document.createElement('tr')
         tbody.appendChild(tr);
         tr.appendChild(document.createElement('td')).textContent = +key+1
-        tr.appendChild(document.createElement('td')).textContent = obj.state
-        tr.appendChild(document.createElement('td')).textContent = obj.confirmedCases
-        tr.appendChild(document.createElement('td')).textContent = obj.discharged
-        tr.appendChild(document.createElement('td')).textContent = obj.death
+        tr.appendChild(document.createElement('td')).textContent = records.state
+        tr.appendChild(document.createElement('td')).textContent = records.confirmedCases
+        tr.appendChild(document.createElement('td')).textContent = records.discharged
+        tr.appendChild(document.createElement('td')).textContent = records.death
     })()
   }
     const sampleTestRecord = document.querySelector('.sampRecord')
@@ -105,51 +105,51 @@ document.addEventListener('keyup',search);
 // about map 
 var data = [
   ['Rivers', 0],
-  // ['ng-kt', 1],
-  // ['ng-so', 2],
-  // ['ng-za', 3],
-  // ['ng-yo', 4],
-  // ['ng-ke', 5],
-  // ['ng-ad', 6],
-  // ['ng-bo', 7],
-  // ['ng-ak', 8],
-  // ['ng-ab', 9],
-  // ['ng-im', 10],
-  // ['ng-by', 11],
-  // ['ng-be', 12],
-  // ['ng-cr', 13],
-  // ['ng-ta', 14],
-  // ['ng-kw', 15],
-  // ['ng-la', 16],
-  // ['ng-ni', 17],
-  // ['ng-fc', 18],
-  // ['ng-og', 19],
-  // ['ng-on', 20],
-  // ['ng-ek', 21],
-  // ['ng-os', 22],
-  // ['ng-oy', 23],
-  // ['ng-an', 24],
-  // ['ng-ba', 25],
-  // ['ng-go', 26],
-  // ['ng-de', 27],
-  // ['ng-ed', 28],
-  // ['ng-en', 29],
-  // ['ng-eb', 30],
-  // ['ng-kd', 31],
-  // ['ng-ko', 32],
-  // ['ng-pl', 33],
-  // ['ng-na', 34],
-  // ['ng-ji', 35],
-  // ['ng-kn', 36]
+  ['Katsina', 1],
+  ['Sokoto', 2],
+  ['Zamfara', 3],
+  ['Yobe', 4],
+  ['Kebbi', 5],
+  ['Adamawa', 6],
+  ['Borno', 7],
+  ['AkwaIbom', 8],
+  ['Abia', 9],
+  ['Imo', 10],
+  ['Bayelsa', 11],
+  ['Benue', 12],
+  ['CrossRiver', 13],
+  ['Taraba', 14],
+  ['Kwara', 15],
+  ['Lagos', 16],
+  ['Niger', 17],
+  ['FCT', 18],
+  ['Ogun', 19],
+  ['Ondo', 20],
+  ['Ekiti', 21],
+  ['Osun', 22],
+  ['Oyo', 23],
+  ['Anambra', 24],
+  ['Bauchi', 25],
+  ['Gombe', 26],
+  ['Delta', 27],
+  ['Edo', 28],
+  ['Enugu', 29],
+  ['Ebonyi', 30],
+  ['Kaduna', 31],
+  ['Kogi', 32],
+  ['Plateau', 33],
+  ['Nasarawa', 34],
+  ['Jigawa', 35],
+  ['Kano', 36]
 ];
-// let a = data[1][1]
-// console.log(a)
+
+let stateInMap 
 for (const key in data) {
-  let c = data[key][0]
-  // console.log(c)
-  if (c === obj) {
-    console.log('u try')
-  }
+  stateInMap = data[key][0]
+  console.log(stateInMap)
+}
+if (state == stateInMap) {
+  console.log('This is'+stateInMap)
 }
 
 // Create the chart
