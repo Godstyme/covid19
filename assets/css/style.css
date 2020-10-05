@@ -39,7 +39,7 @@ div#date{
 div#confirmedCaseCon{
   padding: 20px 60px;
 }
-#firstGridCon,#secondGridCon{
+div#firstGridCon,div#secondGridCon{
   display: grid;
   grid-template-columns: repeat(2,1fr);
   column-gap: 30px;
@@ -57,11 +57,11 @@ div#sampleTestCaption{
   display: grid;
   grid-template-columns: 70% 20%;
 }
-.sampCaption{
+span.sampCaption{
   text-align: left;
   padding: 20px 5px;
 }
-.sampRecord,.confirmedRecord,.activeRecord,.dischargedRecord{
+span.sampRecord,span.confirmedRecord,span.activeRecord,span.dischargedRecord{
   padding: 20px 0px;
   text-align: right;
   font-weight: bolder;
@@ -79,7 +79,7 @@ div#confirmedCaseCaption{
   display: grid;
   grid-template-columns: 70% 20%;
 }
-#activeCaption{
+div#activeCaption{
   background: #FFC82D;
   font-size: 1.4em;
   padding: 10px 0px;
@@ -92,7 +92,7 @@ div#confirmedCaseCaption{
   grid-template-columns: 70% 20%;
   color: #000 !important;
 }
-#dischargedCaption{
+div#dischargedCaption{
   background: #138750;
   font-size: 1.4em;
   padding: 10px 0px;
@@ -115,15 +115,21 @@ div#totalDeathCaption{
   text-transform: uppercase;
   margin-top: 30px;
 }
+div#inputHolder{
+  width: 80%;
+  background: #fff;
+  margin: 0px auto;
+  padding: 20px 0px 2px 0px;
+  visibility: hidden;
+}
 section div.tableCon{
-  margin: 20px auto;
-  box-shadow: 1px 1px 3px #000;
+  margin: 0px auto;
   width: 80%;
   background: #fff;
   padding-top: 10px;
   visibility: hidden;
 }
-#serachInput{
+input#searchInput{
   background-image: url(../imgs/search.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -191,21 +197,24 @@ a#socialHandle{
   div#date{
     font-size: 1.7em;
   }
-  #firstGridCon,#secondGridCon{
+  div#firstGridCon,div#secondGridCon{
     display: grid;
     grid-template-columns: repeat(1,1fr);
   } 
-  #confirmedCaseCaption,
+  div#confirmedCaseCaption,
   div#sampleTestCaption{
     font-size: 0.8em !important;
   }
-  #activeCaption,#dischargedCaption,div#totalDeathCaption{
+  div#activeCaption,div#dischargedCaption,div#totalDeathCaption{
     display: flex;
     justify-content: space-around;
     font-size: 1em;
   }
-  .deathsRecord{
+  span.deathsRecord{
     padding: 20px 0px 2px 0px !important;
+  }
+  div#inputHolder{
+    width: 100%;
   }
   section div.tableCon{
     width: 100%;
@@ -220,10 +229,14 @@ a#socialHandle{
   footer > div{
     font-family: monospace;
   }
-  #serachInput{
+  input#searchInput{
     width: 90%;
     font-size: 1em;
     padding: 2px 0px 0px 38px;
+  }
+  div#container {
+    height: 500px;
+    min-width: 80%;
   }
 }
 
@@ -239,9 +252,12 @@ a#socialHandle{
   div#confirmedCaseCon{
     padding: 20px 20px;
   }
-  #firstGridCon,#secondGridCon{
+  div#firstGridCon,div#secondGridCon{
     display: grid;
     grid-template-columns: repeat(1,1fr);
+  }
+  div#inputHolder{
+    width: 100%;
   }
   section div.tableCon{
     width: 100%;
@@ -256,14 +272,15 @@ a#socialHandle{
   footer > div{
     font-family: monospace;
   }
-  #serachInput{
+  input#searchInput{
     width: 80%;
+    font-size: 1em;
   }
   div#totalDeathCaption{
     display: grid;
     grid-template-columns: repeat(2,1fr);
   }
-  .deathsRecord{
+  span.deathsRecord{
     padding: 20px 0px 2px 0px !important;
   }
 }
@@ -279,7 +296,7 @@ a#socialHandle{
   div#confirmedCaseCon{
     padding: 20px 40px;
   }
-  #firstGridCon,#secondGridCon{
+  div#firstGridCon,div#secondGridCon{
     display: grid;
     grid-template-columns: repeat(1,1fr);
   }
@@ -287,8 +304,11 @@ a#socialHandle{
     display: flex;
     justify-content: space-around;
   }
-  .deathsRecord{
+  span.deathsRecord{
     padding: 20px 0px 2px 0px !important;
+  }
+  div#inputHolder{
+    width: 95%;
   }
   section div.tableCon{
     width: 95%;
@@ -304,7 +324,7 @@ a#socialHandle{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5em;
   }
-  #serachInput{
+  input#searchInput{
     width: 85%;
     height: 60px;
     font-size: 2em;
@@ -312,6 +332,9 @@ a#socialHandle{
   }
 }
 @media screen and (max-width:1300px) and (min-width: 801px){
+  div#inputHolder{
+    width: 95%;
+  }
   section div.tableCon{
     width: 95%;
     overflow-x: auto;
@@ -326,7 +349,7 @@ a#socialHandle{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5em;
   }
-  #serachInput{
+  input#searchInput{
     width: 45%;
     height: 60px;
     font-size: 2em;
@@ -334,9 +357,9 @@ a#socialHandle{
   }
 }
 
-#container {
+/* about map found in the web page */
+div#container {
   height: 500px;
-  min-width: 310px;
   max-width: 800px;
   margin: 30px auto;
 }

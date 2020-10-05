@@ -33,6 +33,7 @@ fetch(userRquest, requestOptions)
     const totalDischargeRecord = document.querySelector('.dischargedRecord')
     const totalActiveRecord = document.querySelector('.activeRecord')
     const totalDeathRecord = document.querySelector('.deathsRecord')
+    const inputHolder = document.querySelector('#inputHolder')
     sampleTestRecord.innerHTML = record.data.totalSamplesTested
     totalConfirmedRecord.innerHTML = record.data.totalConfirmedCases
     totalConfirmedRecord.style.visibility = 'visible'
@@ -43,6 +44,7 @@ fetch(userRquest, requestOptions)
     totalActiveRecord.style.visibility = 'visible'
     totalDeathRecord.innerHTML = record.data.death
     totalDeathRecord.style.visibility = 'visible'
+    inputHolder.style.visibility = 'visible'
     // console.log(record.data.totalConfirmedCases)
   })
   .catch(error =>{
@@ -64,7 +66,7 @@ document.querySelector('#tradeMarkDate').innerHTML = now.getFullYear()
 
 let search = () => {
   let input, filter, table, tr, td, cell, i;
-  input = document.querySelector("#serachInput");
+  input = document.querySelector("#searchInput");
   filter = input.value.toUpperCase();
   table = document.querySelector("table");
   tr = table.querySelectorAll("tr");
