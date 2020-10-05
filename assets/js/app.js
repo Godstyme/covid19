@@ -7,13 +7,16 @@ let requestOptions = {
   headers: reqHeaders,
   redirect: 'follow'
 };
+let obj, state;
 const userRquest = new Request('https://covidnigeria.herokuapp.com/api')
 fetch(userRquest, requestOptions)
   .then(async response => {
     const record = await response.json()
     const data = record.data.states
     for (let key in data) {
-      let obj = data[key];
+      obj = data[key];
+      state = obj.state
+      console.log(state)
       // console.log(+key+1,obj.state,obj.confirmedCases,obj.discharged,obj.death)
       ;(() => {
         // creating a new tr
@@ -99,3 +102,92 @@ document.addEventListener('keyup',search);
 //   "strict-transport-security": "max-age=31536000; includeSubDomains; preload"
 // }
 
+// about map 
+var data = [
+  ['Rivers', 0],
+  // ['ng-kt', 1],
+  // ['ng-so', 2],
+  // ['ng-za', 3],
+  // ['ng-yo', 4],
+  // ['ng-ke', 5],
+  // ['ng-ad', 6],
+  // ['ng-bo', 7],
+  // ['ng-ak', 8],
+  // ['ng-ab', 9],
+  // ['ng-im', 10],
+  // ['ng-by', 11],
+  // ['ng-be', 12],
+  // ['ng-cr', 13],
+  // ['ng-ta', 14],
+  // ['ng-kw', 15],
+  // ['ng-la', 16],
+  // ['ng-ni', 17],
+  // ['ng-fc', 18],
+  // ['ng-og', 19],
+  // ['ng-on', 20],
+  // ['ng-ek', 21],
+  // ['ng-os', 22],
+  // ['ng-oy', 23],
+  // ['ng-an', 24],
+  // ['ng-ba', 25],
+  // ['ng-go', 26],
+  // ['ng-de', 27],
+  // ['ng-ed', 28],
+  // ['ng-en', 29],
+  // ['ng-eb', 30],
+  // ['ng-kd', 31],
+  // ['ng-ko', 32],
+  // ['ng-pl', 33],
+  // ['ng-na', 34],
+  // ['ng-ji', 35],
+  // ['ng-kn', 36]
+];
+// let a = data[1][1]
+// console.log(a)
+for (const key in data) {
+  let c = data[key][0]
+  // console.log(c)
+  if (c === obj) {
+    console.log('u try')
+  }
+}
+
+// Create the chart
+Highcharts.mapChart('container', {
+  chart: {
+    map: 'countries/ng/ng-all'
+  },
+
+  title: {
+    text: 'New cases recorded'
+  },
+
+  subtitle: {
+    text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/ng/ng-all.js">Nigeria</a>'
+  },
+
+  mapNavigation: {
+    enabled: true,
+    buttonOptions: {
+      verticalAlign: 'bottom'
+    }
+  },
+
+  colorAxis: {
+    min: 0
+  },
+
+  series: [{
+    data: data,
+    name: 'Random data',
+    states: {
+      hover: {
+        color: '#BADA55'
+      }
+    },
+    dataLabels: {
+      enabled: true,
+      format: '{point.name}'
+    }
+  }]
+});

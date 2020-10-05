@@ -1,6 +1,7 @@
 // Prepare demo data
 // Data is joined to map using value of 'hc-key' property by default.
 // See API docs for 'joinBy' for more info on linking data and map.
+// 07033322289
 var data = [
   ['ng-ri', 0],
   ['ng-kt', 1],
@@ -40,6 +41,16 @@ var data = [
   ['ng-ji', 35],
   ['ng-kn', 36]
 ];
+let a = data[1][1]
+a.stye.background = 'red'
+console.log(a)
+for (const key in data) {
+  // console.log(data[key][1])
+  // let a = data[key]
+  // for (const iterator in a) {
+  //   console.log(a[iterator])
+  // }
+}
 
 // Create the chart
 Highcharts.mapChart('container', {
@@ -80,3 +91,4 @@ Highcharts.mapChart('container', {
     }
   }]
 });
+// https://api.highcharts.com/highmaps/series.map.joinBy
