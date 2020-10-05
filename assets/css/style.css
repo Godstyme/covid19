@@ -199,10 +199,13 @@ a#socialHandle{
   div#sampleTestCaption{
     font-size: 0.8em !important;
   }
-  #activeCaption,#dischargedCaption{
+  #activeCaption,#dischargedCaption,div#totalDeathCaption{
     display: flex;
     justify-content: space-around;
     font-size: 1em;
+  }
+  .deathsRecord{
+    padding: 20px 0px 2px 0px !important;
   }
   section div.tableCon{
     width: 100%;
@@ -256,6 +259,13 @@ a#socialHandle{
   #serachInput{
     width: 80%;
   }
+  div#totalDeathCaption{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  .deathsRecord{
+    padding: 20px 0px 2px 0px !important;
+  }
 }
 @media screen and (max-width:800px) and (min-width: 501px){
   img{
@@ -273,9 +283,12 @@ a#socialHandle{
     display: grid;
     grid-template-columns: repeat(1,1fr);
   }
-  div#sampleTestCaption,#confirmedCaseCaption,#activeCaption,#dischargedCaption{
+  div#sampleTestCaption,#confirmedCaseCaption,#activeCaption,#dischargedCaption,div#totalDeathCaption{
     display: flex;
     justify-content: space-around;
+  }
+  .deathsRecord{
+    padding: 20px 0px 2px 0px !important;
   }
   section div.tableCon{
     width: 95%;
@@ -319,4 +332,15 @@ a#socialHandle{
     font-size: 2em;
     padding: 2px 0px 0px 45px;
   }
+}
+
+#container {
+  height: 500px;
+  min-width: 310px;
+  max-width: 800px;
+  margin: 30px auto;
+}
+.loading {
+  margin-top: 10em;
+  text-align: center;
 }
