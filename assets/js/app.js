@@ -149,11 +149,14 @@ var data = [
 let stateInMap 
 for (const key in data) {
   stateInMap = data[key][0]
-  console.log(stateInMap)
+  // console.log(stateInMap)
 }
+// console.log(stateInMap)
 if (state == stateInMap) {
   console.log(`This is ${stateInMap}`)
 }
+
+console.log(stateInMap)
 
 // Create the chart
 Highcharts.mapChart('container', {
@@ -194,3 +197,4 @@ Highcharts.mapChart('container', {
     }
   }]
 });
+
