@@ -28,7 +28,7 @@ main{
 		transform: rotate(0deg);
 	}
 	100% {
-		transform: rotate(560deg);
+		transform: rotate(500deg);
 	}
 }
 @keyframes pageBodyAnimate { 
@@ -358,6 +358,9 @@ a#socialHandle{
     height: 60px;
     font-size: 2em;
     padding: 2px 0px 0px 45px;
+  }
+  .preload{
+    margin: 50% auto;
   }
 }
 @media screen and (max-width:1300px) and (min-width: 801px){
