@@ -6,6 +6,35 @@
 :root{
   background: #091008;
 }
+main{
+  display: none;
+  position: relative;
+	animation: pageBodyAnimate 2s;
+}
+.preload{
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  border-top: 16px solid #0492C2;
+  border-right: 16px solid #138750;
+  border-bottom: 16px solid red;
+  border-left: 16px solid #FFC82D;
+  border-radius: 50%;
+	margin: 10% auto;
+	animation: preloader 2s linear infinite;
+}
+@keyframes preloader{
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(560deg);
+	}
+}
+@keyframes pageBodyAnimate { 
+  from{ bottom:-50px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
 div.logo{
   padding: 20px 0px 20px 0px;
   text-align: center;

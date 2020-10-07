@@ -1,3 +1,4 @@
+// ====== api header  =======
 let reqHeaders = new Headers({
   'Content-Type': 'application/json'
 });
@@ -8,18 +9,18 @@ let requestOptions = {
   redirect: 'follow'
 };
 
-// declared a global variable that hold a state name
+// ===== declared a global variable that hold a state name ===
 let state;
 
-// fetch api request 
+// ==== fetch api request ======
 const userRquest = new Request('https://covidnigeria.herokuapp.com/api')
 fetch(userRquest, requestOptions)
   .then(async response => {
     const record = await response.json()
-    // collection Of States[array] that has each object of state which returns an array
+    // === collection Of States[array] that has each object of state which returns an array ===
     const collectionOfStates = record.data.states
 
-    // for in loop that iterate through the whole array
+    // === for in loop that iterate through the whole array ===
     for (let key in collectionOfStates) {
 
       // returns objects of each state
