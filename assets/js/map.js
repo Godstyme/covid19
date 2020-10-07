@@ -92,3 +92,15 @@ Highcharts.mapChart('container', {
   }]
 });
 // https://api.highcharts.com/highmaps/series.map.joinBy
+
+
+
+// https://openi.nlm.nih.gov/api/search?m=1&n=10
+// {
+//   "content-length": "60",
+//   "content-type": "application/json;charset=UTF-8",
+//   "date": "Fri, 02 Oct 2020 12:37:29 GMT",
+//   "server": "Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips mod_jk/1.2.43",
+//   "status": "200",
+//   "strict-transport-security": "max-age=31536000; includeSubDomains; preload"
+// }
