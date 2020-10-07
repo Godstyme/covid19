@@ -7,16 +7,25 @@ let requestOptions = {
   headers: reqHeaders,
   redirect: 'follow'
 };
-let records, state;
+
+// declared a global variable that hold a state name
+let state;
+
+// fetch api request 
 const userRquest = new Request('https://covidnigeria.herokuapp.com/api')
 fetch(userRquest, requestOptions)
   .then(async response => {
     const record = await response.json()
-    const data = record.data.states
-    for (let key in data) {
-      records = data[key];
-      state = records.state
-      console.log(state)
+    // collection Of States[array] that has each object of state which returns an array
+    const collectionOfStates = record.data.states
+
+    // for in loop that iterate through the whole array
+    for (let key in collectionOfStates) {
+
+      // returns objects of each state
+      let records = collectionOfStates[key];
+      // state = records.state
+      // console.log(state)
       // console.log(+key+1,records.state,records.confirmedCases,records.discharged,records.death)
       ;(() => {
         // creating a new tr
@@ -31,12 +40,14 @@ fetch(userRquest, requestOptions)
         tr.appendChild(document.createElement('td')).textContent = records.death
     })()
   }
+    //js that queries each div and table
     const sampleTestRecord = document.querySelector('.sampRecord')
     const totalConfirmedRecord = document.querySelector('.confirmedRecord')
     const totalDischargeRecord = document.querySelector('.dischargedRecord')
     const totalActiveRecord = document.querySelector('.activeRecord')
     const totalDeathRecord = document.querySelector('.deathsRecord')
     const inputHolder = document.querySelector('#inputHolder')
+    // Values are being added to the div and table and also dispaly it on the web page 
     sampleTestRecord.innerHTML = record.data.totalSamplesTested
     totalConfirmedRecord.innerHTML = record.data.totalConfirmedCases
     totalConfirmedRecord.style.visibility = 'visible'
@@ -54,6 +65,7 @@ fetch(userRquest, requestOptions)
     console.log(error)
   })
 
+  // date function that is being display on the web page 
 const dateBuilder = (d) => {
   const months = ['Jan','Feb','Mar','April','May','June','July','Aug','Sept','Oct','Nov','Dec']
   const days = ['Sun','Mon','Tue','Wed','Thur','Fri','Sat']
@@ -67,6 +79,7 @@ const now = new Date()
 const date = document.querySelector('#date').innerHTML = dateBuilder(now)
 document.querySelector('#tradeMarkDate').innerHTML = now.getFullYear()
 
+// search queries that searches through the table 
 let search = () => {
   let input, filter, table, tr, td, cell, i;
   input = document.querySelector("#searchInput");
@@ -149,7 +162,7 @@ for (const key in data) {
   console.log(stateInMap)
 }
 if (state == stateInMap) {
-  console.log('This is'+stateInMap)
+  console.log(`This is ${stateInMap}`)
 }
 
 // Create the chart
