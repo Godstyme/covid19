@@ -40,6 +40,8 @@ fetch(userRquest, requestOptions)
         tr.appendChild(document.createElement('td')).textContent = records.discharged
         tr.appendChild(document.createElement('td')).textContent = records.death
     })()
+    state = records.state
+    console.log(state)
   }
     //js that queries each div and table
     const sampleTestRecord = document.querySelector('.sampRecord')
