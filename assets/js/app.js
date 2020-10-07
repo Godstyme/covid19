@@ -40,8 +40,8 @@ fetch(userRquest, requestOptions)
         tr.appendChild(document.createElement('td')).textContent = records.discharged
         tr.appendChild(document.createElement('td')).textContent = records.death
     })()
-    state = records.state
-    console.log(state)
+    // state = records.state
+    // console.log(state)
   }
     //js that queries each div and table
     const sampleTestRecord = document.querySelector('.sampRecord')
@@ -200,3 +200,18 @@ Highcharts.mapChart('container', {
   }]
 });
 
+
+
+
+// ==================== registration of service worker ============
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load',() => {
+    navigator.serviceWorker
+    .register('./sw.js')
+    .then((registration) => {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, (error) => {
+      console.log('ServiceWorker registration failed: ', error);
+    })
+  })
+}
