@@ -1,6 +1,9 @@
 # covid19
 
-Nigeria Covid-19 tracker built using ```HTML```, ```CSS```, ```JavaScript```.
+Progressive web App, Nigeria covid 19 tracker. It can be used as a native app in your devices. 
+
+## Technologies used 
+```HTML```, ```CSS```, ```JavaScript```.
 
 ## Usage
 
