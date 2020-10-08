@@ -227,7 +227,7 @@ a#socialHandle{
   div#firstGridCon,div#secondGridCon{
     display: grid;
     grid-template-columns: repeat(1,1fr);
-  } 
+  }
   div#confirmedCaseCaption,
   div#sampleTestCaption{
     font-size: 0.8em !important;

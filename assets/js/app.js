@@ -109,44 +109,45 @@ document.addEventListener('keyup',search);
 
 // about map 
 var data = [
-  ['Rivers', 0],
-  ['Katsina', 1],
-  ['Sokoto', 2],
-  ['Zamfara', 3],
-  ['Yobe', 4],
-  ['Kebbi', 5],
-  ['Adamawa', 6],
-  ['Borno', 7],
-  ['AkwaIbom', 8],
-  ['Abia', 9],
-  ['Imo', 10],
-  ['Bayelsa', 11],
-  ['Benue', 12],
-  ['CrossRiver', 13],
-  ['Taraba', 14],
-  ['Kwara', 15],
-  ['Lagos', 16],
-  ['Niger', 17],
-  ['FCT', 18],
-  ['Ogun', 19],
-  ['Ondo', 20],
-  ['Ekiti', 21],
-  ['Osun', 22],
-  ['Oyo', 23],
-  ['Anambra', 24],
-  ['Bauchi', 25],
-  ['Gombe', 26],
-  ['Delta', 27],
-  ['Edo', 28],
-  ['Enugu', 29],
-  ['Ebonyi', 30],
-  ['Kaduna', 31],
-  ['Kogi', 32],
-  ['Plateau', 33],
-  ['Nasarawa', 34],
-  ['Jigawa', 35],
-  ['Kano', 36]
+    ['ng-ri', 0],
+    ['ng-kt', 1],
+    ['ng-so', 2],
+    ['ng-za', 3],
+    ['ng-yo', 4],
+    ['ng-ke', 5],
+    ['ng-ad', 6],
+    ['ng-bo', 7],
+    ['ng-ak', 8],
+    ['ng-ab', 9],
+    ['ng-im', 10],
+    ['ng-by', 11],
+    ['ng-be', 12],
+    ['ng-cr', 13],
+    ['ng-ta', 14],
+    ['ng-kw', 15],
+    ['ng-la', 16],
+    ['ng-ni', 17],
+    ['ng-fc', 18],
+    ['ng-og', 19],
+    ['ng-on', 20],
+    ['ng-ek', 21],
+    ['ng-os', 22],
+    ['ng-oy', 23],
+    ['ng-an', 24],
+    ['ng-ba', 25],
+    ['ng-go', 26],
+    ['ng-de', 27],
+    ['ng-ed', 28],
+    ['ng-en', 29],
+    ['ng-eb', 30],
+    ['ng-kd', 31],
+    ['ng-ko', 32],
+    ['ng-pl', 33],
+    ['ng-na', 34],
+    ['ng-ji', 35],
+    ['ng-kn', 36]
 ];
+
 
 let stateInMap 
 for (const key in data) {
@@ -170,6 +171,7 @@ Highcharts.mapChart('container', {
     text: 'New cases recorded'
   },
 
+
   subtitle: {
     text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/ng/ng-all.js">Nigeria</a>'
   },
@@ -187,6 +189,8 @@ Highcharts.mapChart('container', {
 
   series: [{
     data: data,
+    showInLegend:true,
+    showCheckbox:true,
     name: 'Random data',
     states: {
       hover: {
