@@ -1,9 +1,9 @@
-# covid19
+# covid19 (Progressive Web App) 
 
-Progressive web App, Nigeria covid 19 tracker. It can be used as a native app in your devices. 
+Progressive web App, Nigeria covid 19 tracker. Installable like a native app. 
 
 ## Technologies used 
-```HTML```, ```CSS```, ```JavaScript```.
+```HTML```, ```CSS``` and ```JavaScript```.
 
 ## Usage
 
