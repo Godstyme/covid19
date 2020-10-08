@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: 'Nunito',Arial, sans-serif;
 }
 :root{
   background: #091008;
@@ -47,7 +48,6 @@ h1#caption{
   text-transform: uppercase;
   text-align: center;
   font-size: 2.5em;
-  font-family: monospace;
 }
 div#dailyRecordCon{
   height: auto;
@@ -62,7 +62,6 @@ div#date{
   color: #fff;
   text-align: center;
   padding: 10px 0px;
-  font-family: monospace;
   font-size: 2em;
 }
 div#confirmedCaseCon{
@@ -200,7 +199,6 @@ footer{
 footer > div{
   text-align: center;
   color: #fff;
-  font-family: monospace;
 }
 a#socialHandle{
   text-decoration: none;
@@ -255,9 +253,6 @@ a#socialHandle{
   th,td{
     padding: 0.3em 0.6em;
   }
-  footer > div{
-    font-family: monospace;
-  }
   input#searchInput{
     width: 90%;
     font-size: 1em;
@@ -297,9 +292,6 @@ a#socialHandle{
   }
   th,td{
     padding: 0.3em 0.6em;
-  }
-  footer > div{
-    font-family: monospace;
   }
   input#searchInput{
     width: 80%;
@@ -353,7 +345,6 @@ a#socialHandle{
     padding: 0.3em 0.6em;
   }
   footer > div{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5em;
   }
   input#searchInput{
@@ -381,7 +372,6 @@ a#socialHandle{
     padding: 0.3em 0.6em;
   }
   footer > div{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5em;
   }
   input#searchInput{
