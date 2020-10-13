@@ -109,8 +109,19 @@ let search = () => {
 
 document.addEventListener('keyup',search);
 
+function getSpecialCases(){
+  return {
+    kaduna : 'ng-kd',
+    kano : 'ng-kn',
+    kastina : 'ng-kt',
+    bayelsa : 'ng-by'
+  }
+}
 function getStateNameShort(statename){
-  return 'ng-' + statename.substr(0, 2).toLowerCase();
+  statename = statename.toLowerCase();
+  specialCases = getSpecialCases();
+  if(statename in specialCases) return specialCases[statename];
+  return 'ng-' + statename.substr(0, 2);
 }
 
 function getStatesChartData(collection){
