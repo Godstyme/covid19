@@ -19,7 +19,6 @@ fetch(userRquest, requestOptions)
     const record = await response.json()
     // === collection Of States[array] that has each object of state which returns an array ===
     const collectionOfStates = record.data.states
-
     // === for in loop that iterate through the whole array ===
     for (let key in collectionOfStates) {
 
@@ -28,7 +27,7 @@ fetch(userRquest, requestOptions)
       // state = records.state
       // console.log(state)
       // console.log(+key+1,records.state,records.confirmedCases,records.discharged,records.death)
-      ;(() => {
+      (() => {
         // creating a new tr
         document.querySelector('.tableCon').style.visibility = 'visible'
         const tbody = document.querySelector('#tble')
@@ -39,10 +38,10 @@ fetch(userRquest, requestOptions)
         tr.appendChild(document.createElement('td')).textContent = records.confirmedCases
         tr.appendChild(document.createElement('td')).textContent = records.discharged
         tr.appendChild(document.createElement('td')).textContent = records.death
-    })()
-    // state = records.state
-    // console.log(state)
-  }
+      })()
+      // state = records.state
+      // console.log(state)
+    }
     //js that queries each div and table
     const sampleTestRecord = document.querySelector('.sampRecord')
     const totalConfirmedRecord = document.querySelector('.confirmedRecord')
@@ -63,6 +62,9 @@ fetch(userRquest, requestOptions)
     totalDeathRecord.style.visibility = 'visible'
     inputHolder.style.visibility = 'visible'
     // console.log(record.data.totalConfirmedCases)
+
+    let data = getStatesChartData(collectionOfStates);
+    createChart(data);
   })
   .catch(error =>{
     console.log(error)
@@ -104,106 +106,66 @@ let search = () => {
     }
   }
 }
+
 document.addEventListener('keyup',search);
 
-
-// about map 
-var data = [
-    ['ng-ri', 0],
-    ['ng-kt', 1],
-    ['ng-so', 2],
-    ['ng-za', 3],
-    ['ng-yo', 4],
-    ['ng-ke', 5],
-    ['ng-ad', 6],
-    ['ng-bo', 7],
-    ['ng-ak', 8],
-    ['ng-ab', 9],
-    ['ng-im', 10],
-    ['ng-by', 11],
-    ['ng-be', 12],
-    ['ng-cr', 13],
-    ['ng-ta', 14],
-    ['ng-kw', 15],
-    ['ng-la', 16],
-    ['ng-ni', 17],
-    ['ng-fc', 18],
-    ['ng-og', 19],
-    ['ng-on', 20],
-    ['ng-ek', 21],
-    ['ng-os', 22],
-    ['ng-oy', 23],
-    ['ng-an', 24],
-    ['ng-ba', 25],
-    ['ng-go', 26],
-    ['ng-de', 27],
-    ['ng-ed', 28],
-    ['ng-en', 29],
-    ['ng-eb', 30],
-    ['ng-kd', 31],
-    ['ng-ko', 32],
-    ['ng-pl', 33],
-    ['ng-na', 34],
-    ['ng-ji', 35],
-    ['ng-kn', 36]
-];
-
-
-let stateInMap 
-for (const key in data) {
-  stateInMap = data[key][0]
-  // console.log(stateInMap)
-}
-// console.log(stateInMap)
-if (state == stateInMap) {
-  console.log(`This is ${stateInMap}`)
+function getStateNameShort(statename){
+  return 'ng-' + statename.substr(0, 2).toLowerCase();
 }
 
-console.log(stateInMap)
+function getStatesChartData(collection){
+  return collection.filter((stateObj) => stateObj.confirmedCases).map((stateObj) => {
+    let shortCode = getStateNameShort(stateObj.state);
+    return [
+      [shortCode][0] , stateObj.confirmedCases
+    ]
+  });
+}
 
 // Create the chart
-Highcharts.mapChart('container', {
-  chart: {
-    map: 'countries/ng/ng-all'
-  },
+function createChart(data){
+  Highcharts.mapChart('container', {
+    chart: {
+      map: 'countries/ng/ng-all'
+    },
 
-  title: {
-    text: 'New cases recorded'
-  },
+    title: {
+      text: 'New cases recorded'
+    },
 
 
-  subtitle: {
-    text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/ng/ng-all.js">Nigeria</a>'
-  },
+    subtitle: {
+      text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/ng/ng-all.js">Nigeria</a>'
+    },
 
-  mapNavigation: {
-    enabled: true,
-    buttonOptions: {
-      verticalAlign: 'bottom'
-    }
-  },
-
-  colorAxis: {
-    min: 0
-  },
-
-  series: [{
-    data: data,
-    showInLegend:true,
-    showCheckbox:true,
-    name: 'Random data',
-    states: {
-      hover: {
-        color: '#BADA55'
+    mapNavigation: {
+      enabled: true,
+      buttonOptions: {
+        verticalAlign: 'bottom'
       }
     },
-    dataLabels: {
-      enabled: true,
-      format: '{point.name}'
-    }
-  }]
-});
 
+    colorAxis: {
+      min: 0
+    },
+
+    series: [{
+      data: data,
+      showInLegend:true,
+      showCheckbox:true,
+      name: 'Confirmed Cases',
+      states: {
+        hover: {
+          color: '#BADA55'
+        }
+      },
+      dataLabels: {
+        enabled: true,
+        format: '{point.name}'
+      }
+    }]
+  });
+}
 
 
 
