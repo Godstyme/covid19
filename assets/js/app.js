@@ -121,48 +121,6 @@ function getStatesChartData(collection){
     ]
   });
 }
-function namesShortObj(){
-  return {
-    'ng-ri' :  0,
-    'ng-kt' :  1,
-    'ng-so' :  2,
-    'ng-za' :  3,
-    'ng-yo' :  4,
-    'ng-ke' :  5,
-    'ng-ad' :  6,
-    'ng-bo' :  7,
-    'ng-ak' :  8,
-    'ng-ab' :  9,
-    'ng-im' :  10,
-    'ng-by' :  11,
-    'ng-be' :  12,
-    'ng-cr' :  13,
-    'ng-ta' :  14,
-    'ng-kw' :  15,
-    'ng-la' :  16,
-    'ng-ni' :  17,
-    'ng-fc' :  18,
-    'ng-og' :  19,
-    'ng-on' :  20,
-    'ng-ek' :  21,
-    'ng-os' :  22,
-    'ng-oy' :  23,
-    'ng-an' :  24,
-    'ng-ba' :  25,
-    'ng-go' :  26,
-    'ng-de' :  27,
-    'ng-ed' :  28,
-    'ng-en' :  29,
-    'ng-eb' :  30,
-    'ng-kd' :  31,
-    'ng-ko' :  32,
-    'ng-pl' :  33,
-    'ng-na' :  34,
-    'ng-ji' :  35,
-    'ng-kn' :  3,
-  };
-}
-
 
 // Create the chart
 function createChart(data){
