@@ -113,7 +113,7 @@ function getSpecialCases(){
   return {
     kaduna : 'ng-kd',
     kano : 'ng-kn',
-    katsina : 'ng-kt',
+    Katsina : 'ng-kt',
     bayelsa : 'ng-by'
   }
 }
@@ -141,7 +141,7 @@ function createChart(data){
     },
 
     title: {
-      text: 'New cases recorded'
+      text: 'States with cases'
     },
 
 
