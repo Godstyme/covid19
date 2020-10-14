@@ -113,7 +113,7 @@ function getSpecialCases(){
   return {
     kaduna : 'ng-kd',
     kano : 'ng-kn',
-    kastina : 'ng-kt',
+    katsina : 'ng-kt',
     bayelsa : 'ng-by'
   }
 }
