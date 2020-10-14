@@ -73,17 +73,8 @@ div#firstGridCon,div#secondGridCon{
   column-gap: 30px;
   color: #fff;
 }
-div#sampleTestCaption{
+div.info-sample{
   background: #9F9A73;
-  font-size: 1.4em;
-  padding: 10px 0px;
-  border-radius: 10px;
-  font-weight: bolder;
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: 70% 20%;
 }
 span.sampCaption{
   text-align: left;
@@ -95,53 +86,33 @@ span.sampRecord,span.confirmedRecord,span.activeRecord,span.dischargedRecord{
   font-weight: bolder;
   visibility: hidden;
 }
-div#confirmedCaseCaption{
+div.info-confirm{
   background: #0492C2;
+}
+div.info{
   font-size: 1.4em;
-  padding: 10px 0px;
+  padding: 10px 8px;
+  text-transform: uppercase;
+  margin-top: 30px;
   border-radius: 10px;
   font-weight: bolder;
-  text-transform: uppercase;
   text-align: center;
-  margin-top: 30px;
   display: grid;
   grid-template-columns: 70% 20%;
 }
-div#activeCaption{
+div.info-active{
   background: #FFC82D;
-  font-size: 1.4em;
-  padding: 10px 0px;
-  border-radius: 10px;
-  font-weight: bolder;
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: 70% 20%;
   color: #000 !important;
 }
-div#dischargedCaption{
+div.info-discharged{
   background: #138750;
-  font-size: 1.4em;
-  padding: 10px 0px;
-  border-radius: 10px;
-  font-weight: bolder;
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: 70% 20%;
 }
-div#totalDeathCaption{
+span.deathsRecord{
+  padding: 20px 0px 2px 0px !important;
+}
+div.info-death{
   background: #C60001;
-  font-size: 1.4em;
-  padding: 20px 0px;
-  text-align: center;
-  color: #fff;
-  border-radius: 10px;
-  font-weight: bolder;
-  text-transform: uppercase;
-  margin-top: 30px;
+  color: #fff !important;
 }
 div#inputHolder{
   width: 80%;
@@ -228,17 +199,16 @@ a#socialHandle{
     display: grid;
     grid-template-columns: repeat(1,1fr);
   }
-  div#confirmedCaseCaption,
-  div#sampleTestCaption{
-    font-size: 0.8em !important;
+  div.info{
+    font-size: 1em;
+  }
+  span.deathsRecord{
+    padding: 20px 0px 2px 0px !important;
   }
   div#activeCaption,div#dischargedCaption,div#totalDeathCaption{
     display: flex;
     justify-content: space-around;
     font-size: 1em;
-  }
-  span.deathsRecord{
-    padding: 20px 0px 2px 0px !important;
   }
   div#inputHolder{
     width: 100%;
@@ -323,10 +293,6 @@ a#socialHandle{
   div#firstGridCon,div#secondGridCon{
     display: grid;
     grid-template-columns: repeat(1,1fr);
-  }
-  div#sampleTestCaption,#confirmedCaseCaption,#activeCaption,#dischargedCaption,div#totalDeathCaption{
-    display: flex;
-    justify-content: space-around;
   }
   span.deathsRecord{
     padding: 20px 0px 2px 0px !important;

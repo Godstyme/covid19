@@ -24,9 +24,7 @@ fetch(userRquest, requestOptions)
 
       // returns objects of each state
       let records = collectionOfStates[key];
-      // state = records.state
-      // console.log(state)
-      // console.log(+key+1,records.state,records.confirmedCases,records.discharged,records.death)
+      // console.log(+key+1,records.state,etc)
       (() => {
         // creating a new tr
         document.querySelector('.tableCon').style.visibility = 'visible'
@@ -39,8 +37,6 @@ fetch(userRquest, requestOptions)
         tr.appendChild(document.createElement('td')).textContent = records.discharged
         tr.appendChild(document.createElement('td')).textContent = records.death
       })()
-      // state = records.state
-      // console.log(state)
     }
     //js that queries each div and table
     const sampleTestRecord = document.querySelector('.sampRecord')
@@ -109,7 +105,9 @@ let search = () => {
 
 document.addEventListener('keyup',search);
 
-function getSpecialCases(){
+// ======= about the map start here ======
+let getSpecialCases = () => {
+  // special statename 
   return {
     kaduna : 'ng-kd',
     kano : 'ng-kn',
@@ -117,14 +115,15 @@ function getSpecialCases(){
     bayelsa : 'ng-by'
   }
 }
-function getStateNameShort(statename){
-  statename = statename.toLowerCase();
+
+let  getStateNameShort = (stateName) => {
+  stateName = stateName.toLowerCase();
   specialCases = getSpecialCases();
-  if(statename in specialCases) return specialCases[statename];
-  return 'ng-' + statename.substr(0, 2);
+  if(stateName in specialCases) return specialCases[stateName];
+  return 'ng-' + stateName.substr(0, 2);
 }
 
-function getStatesChartData(collection){
+let getStatesChartData = (collection) => {
   return collection.filter((stateObj) => stateObj.confirmedCases).map((stateObj) => {
     let shortCode = getStateNameShort(stateObj.state);
     return [
@@ -134,7 +133,7 @@ function getStatesChartData(collection){
 }
 
 // Create the chart
-function createChart(data){
+let createChart = (data) => {
   Highcharts.mapChart('container', {
     chart: {
       map: 'countries/ng/ng-all'
@@ -166,6 +165,7 @@ function createChart(data){
       showCheckbox:true,
       name: 'Confirmed Cases',
       states: {
+        color: 'red',
         hover: {
           color: '#BADA55'
         }
@@ -177,7 +177,7 @@ function createChart(data){
     }]
   });
 }
-
+// ======= about the map end here ======
 
 
 // ==================== registration of service worker ============
