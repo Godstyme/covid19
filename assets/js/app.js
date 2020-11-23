@@ -58,7 +58,8 @@ fetch(userRquest, requestOptions)
     totalDeathRecord.style.visibility = 'visible'
     inputHolder.style.visibility = 'visible'
     // console.log(record.data.totalConfirmedCases)
-
+    let data2 = googleMap(collectionOfStates)
+    console.log(data2)
     let data = getStatesChartData(collectionOfStates);
     createChart(data);
   })
@@ -165,7 +166,6 @@ let createChart = (data) => {
       showCheckbox:true,
       name: 'Confirmed Cases',
       states: {
-        color: 'red',
         hover: {
           color: '#BADA55'
         }
@@ -192,3 +192,46 @@ if ('serviceWorker' in navigator) {
     })
   })
 }
+
+
+
+let googleMap = (allStates) => {
+    return allStates.filter((stateObj2) => stateObj2.confirmedCases).map((stateObj2) => {
+  });
+}
+// `````` rough for google map ``````
+// function initMap(){
+//   const lat_lng = {lat: 9.0820, lng: 8.6753}
+//   let map = new google.maps.Map(document.getElementById('map'), {
+//     center: lat_lng,
+//     zoom: 6
+//   });
+//   const circle = new google.maps.Circle({
+//     strokeColor: '#ff0000',
+//     strokeOpacity: 0.5,
+//     strokeWeight: 50,
+//     fillColor: 'yellow',
+//     fillOpacity: 0.2,
+//     map: map,
+//     center: lat_lng,
+//     radius:100
+//   })
+  // let g = googleMap(data2)
+// }
+// google.maps.event.addDomListener(window, 'load', initMap);
+
+
+
+// var mapOptions = {
+//   center: [17.385044, 78.486671],
+//   zoom: 10
+//   }
+  
+//   // Creating a map object
+//   var map = new L.map('map', mapOptions);
+  
+//   // Creating a Layer object
+//   var layer = new     L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+  
+//   // Adding layer to the map
+//   map.addLayer(layer);

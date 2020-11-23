@@ -277,6 +277,13 @@ a#socialHandle{
   .preload{
     margin: 60% auto;
   }
+  #googleMap{
+    height: 300px; 
+    width: 100%;
+  }
+  #map {
+    height: 100%;
+  }
 }
 @media screen and (max-width:800px) and (min-width: 501px){
   img{
@@ -357,4 +364,17 @@ div#container {
 .loading {
   margin-top: 10em;
   text-align: center;
+}
+#googleMap{
+  /* height: 1000px; */
+  padding: 10px 0px;
+  width: 60%;
+  margin: 0px auto;
+}
+#map {
+  height: 50%;
+}
+#openStreetMap{
+  display: flex;
+  justify-content: center;
 }

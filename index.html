@@ -11,6 +11,7 @@
     <link rel="manifest" href="site.webmanifest">
     <meta name="msapplication-TileColor" content="#111810">
     <meta name="theme-color" content="#111810">
+    <!-- <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /> -->
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
@@ -80,7 +81,19 @@
           <div id="container">
 
           </div>
+        <!-- </section>
+        <section id="googleMap">
+          <div id="map"></div>
+        </section> -->
+        <section id="openStreetMap">
+          <div>
+            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=0.9228515625000001%2C2.6357885741666065%2C17.753906250000004%2C15.876809064146771&amp;layer=mapnik" style="border: 1px solid black">
+            <!-- </iframe><br/><small><a href="https://www.openstreetmap.org/#map=6/9.319/9.338">View Larger Map</a></small> -->
+          </div>
         </section>
+        <!-- <section>
+          <div id ="my-map" style = "width:800px; height:600px;"></div>
+        </section> -->
       </section>
       <footer>
         <div>Copyright &copy;
@@ -92,8 +105,15 @@
     <script src="https://code.highcharts.com/maps/highmaps.js"></script>
     <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/mapdata/countries/ng/ng-all.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpcrU_W1OT8-7rBCM11bv3AB_DYLQGvX8&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script> -->
+    <!-- <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
     <script src="assets/js/preloader.js"></script>
     <script src="assets/js/app.js"></script>
-    <!-- <script src="assets/js/map.js"></script> -->
+    <script>
+    </script>
   </body>
 </html>
